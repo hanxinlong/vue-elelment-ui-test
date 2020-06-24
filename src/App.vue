@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <Test></Test>
-    <img src="./assets/logo.png">
+    <Header v-bind:title = "title"></Header>
+    <!-- <img src="./assets/logo.png"> -->
     <router-view/>
   </div>
 </template>
 
 <script>
-import Test from "./components/test.vue"
+import Header from "./components/common/header.vue"
 export default {
   name: 'App',
   components:{
-    Test
+    Header
+  },
+  data(){
+    return{
+      title:"欢迎进入test！！"
+    }
   }
 }
 </script>

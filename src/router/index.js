@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Test from '@/components/test/test'
+import TestTable from '@/components/table-test/table-test'
 
 Vue.use(Router);
 
@@ -8,8 +9,16 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      component: Test,
+      children:[
+        {
+          path: '/test',
+          component: TestTable,
+          meta:{
+            title:"表格测试"
+          }
+        }
+      ]
     }
   ]
 })
